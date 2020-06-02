@@ -74,8 +74,10 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    riders_df=pd.read_csv('/Users/rufusseopa/regression-predict-api-template/Data/Riders.csv')
-    test_df=pd.read_csv('/Users/rufusseopa/regression-predict-api-template/Data/Test.csv')
+
+    test_df=pd.read_csv('https://raw.githubusercontent.com/rufusseopa/Team_18_JHB_WhatTheHack_regression-predict-api-template/master/Data/Test.csv')
+    riders_df=pd.read_csv('https://raw.githubusercontent.com/rufusseopa/Team_18_JHB_WhatTheHack_regression-predict-api-template/master/Data/Riders.csv')
+
     test_df = test_df.merge(riders_df, on='Rider Id')
     test_df.set_index('Order No', inplace=True) 
     test_df=test_df.drop(['Precipitation in millimeters'],axis=1)
